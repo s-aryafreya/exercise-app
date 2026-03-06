@@ -1,72 +1,130 @@
-/* Container for the whole app */
+/* App.css - Updated Cute & Pink Theme */
+
+/* Global Settings */
 .App {
-  text-align: center;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 40px;
-  background-color: #f4f7f6;
   min-height: 100vh;
-}
-
-/* Header Styles */
-h1 {
-  color: #2c3e50;
-  margin-bottom: 30px;
-}
-
-h2 {
-  color: #34495e;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Menu Button Styles */
-.menu-container {
+  /* Soft pink to light cream vertical gradient background */
+  background: linear-gradient(180deg, #ffdde1 0%, #ee9ca7 100%);
+  color: #555; /* Soft grey text (not harsh black) */
+  font-family: 'Quicksand', 'Segoe UI', Roboto, sans-serif; /* Rounded, cute font */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  justify-content: center;
+  padding: 20px;
 }
 
-button {
-  padding: 12px 24px;
+/* Headings */
+h1, h2, h3 {
+  color: #ff6b81; /* Deepest pink/coral */
+  text-transform: capitalize; /* Playful feel, not all uppercase */
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Menu Layout */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Main Menu Buttons */
+.menu-button {
+  background: rgba(255, 255, 255, 0.9); /* Soft white background */
+  color: #ff6b81;
+  border: 3px solid #ff6b81;
+  border-radius: 50px; /* Fully rounded */
+  width: 280px;
+  padding: 15px;
+  margin: 12px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for float */
+}
+
+/* Menu Button Hover */
+.menu-button:hover {
+  background-color: #ff6b81; /* Full pink on hover */
+  color: white;
+  transform: translateY(-5px) scale(1.02); /* Slight lift and pulse */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* deeper shadow */
+}
+
+/* Control Buttons (Increment, Start/Stop, Record Lap) */
+.control-button {
+  background-color: #ffb7c5; /* Classic soft pastel pink */
+  color: #555;
+  border: none;
+  padding: 15px 35px;
+  margin: 10px;
+  border-radius: 50px; /* Rounded pill shape */
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  border: none;
-  border-radius: 8px;
-  background-color: #3498db;
-  color: white;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 200px;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
-button:hover {
-  background-color: #2980b9;
+.control-button:hover:not(:disabled) {
+  background-color: #ff9fb4; /* darker pastel pink on hover */
   transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Specific Style for the Reset/Back Buttons */
-button.secondary {
-  background-color: #e74c3c;
-  margin-top: 20px;
+.control-button:disabled {
+  opacity: 0.5;
+  background-color: #ffc9d4;
+  cursor: not-allowed;
 }
 
-button.secondary:hover {
-  background-color: #c0392b;
+/* Reset/Back Buttons (Special emphasis) */
+.reset-button, .back-button {
+  background-color: transparent;
+  color: #ff6b81;
+  border: 2px solid #ff6b81;
+  border-radius: 50px;
+  margin-top: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Counter and Timer Display */
-.display {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 4rem;
-  font-weight: bold;
-  color: #2c3e50;
-  margin: 20px 0;
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  display: inline-block;
-  border: 4px solid #3498db;
+.reset-button:hover, .back-button:hover {
+  background-color: rgba(255, 107, 129, 0.1); /* gentle glow */
+  transform: translateY(-1px);
+}
+
+/* Laps List (Updated for light theme) */
+.laps-container {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.8); /* soft white card background */
+  border: 1px solid #ffccd5;
+  border-radius: 15px; /* rounded list card */
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(255, 107, 129, 0.1); /* pinkish glow shadow */
+}
+
+.laps-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.laps-container li {
+  font-family: 'Inconsolata', monospace; /* Nice monospace alternative for light themes */
+  color: #ff6b81; /* Deep pink text */
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 1px solid #ffccd5;
+  padding: 10px;
+  text-align: center;
+}
+
+.laps-container li:last-child {
+  border-bottom: none;
 }
